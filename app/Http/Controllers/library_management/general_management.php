@@ -10,6 +10,7 @@ class general_management extends Controller
     private function Book_issue()
    	{
    		
+
    	}
    	private function Book_return()
    	{
@@ -24,16 +25,16 @@ class general_management extends Controller
    	private function query($array){
 
    	}
-   	private function fee_generate()
+   	private function fee_generat()
    	{
    		
    	}
    	private function fee_submition(){
 
    	}
-   	private function show()
+   	public function show()
    	{
-   		return view('library_management.');
+   		return view('library_management.main');
    	}
    	public function calling($call_val){
 
