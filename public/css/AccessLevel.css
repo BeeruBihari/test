@@ -1,0 +1,82 @@
+.file {
+  visibility: hidden;
+  position: absolute;
+}
+.fa-check-circle{
+	color: #58e870;
+	background: white;
+}
+.orderMsg{
+	color: #53b757;
+}
+.red{
+	color: red;
+}
+.table{
+  box-shadow: 0 15px 15px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.30);
+}
+.btn{
+  box-shadow: 0 15px 15px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.30);
+}
+.card{
+  box-shadow: 0 15px 15px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.30);
+}
+.fit{
+	width: 100%;
+}
+.green{
+	color: #58e870;
+}
+body{
+	background-image: url(LoginBG.jpg);
+}
+.login-heading-font{
+	font-family: Petzinge;
+}
+.login-sub-heading-font{
+	font-family: Aachen-Bold;
+	color: white;
+}
+.input-type-font{
+	font-family: Bellevue;
+}
+.blueBG{
+	background-color: #c6e7f5;
+	color: blue;
+	font-size: 200%;
+	font-family: Cooper Black;
+}
+.fa-lock{
+	color: gold;
+}
+.follow{
+	font-size: 200%;
+	color:#215968;
+	font-weight: 100;
+}
+.fa-twitter{
+	color: #1da1f2;
+}
+.fa-google{
+	color: #3d83f3;
+}
+.fa-facebook{
+	color: #4867aa;
+}
+.whiteBG{
+	background-color: white;
+}
+.btn-orange{
+	background-color: orange;
+}
+.termandcondition{
+	font-family: BlackChancery;
+	color: #15518e;
+}
+
+div{ 
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; 
+}
+h3{
+	font-family: 'Roboto', sans-serif;
+}
