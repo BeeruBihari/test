@@ -13,7 +13,7 @@ class ParentClintListTable extends Migration
      */
     public function up()
     {
-        Schema::create('parent_clintList_table', function (Blueprint $table) {
+        Schema::create('parent_clint_list_table', function (Blueprint $table) {
             $table->increments('parent_clint_id');
             $table->string('clint_password');
             $table->string('package_list_json');
