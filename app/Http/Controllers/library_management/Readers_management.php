@@ -7,18 +7,6 @@ use App\Http\Controllers\Controller;
 
 class Readers_management extends Controller
 {
-    private function adding()
-   	{
-   		
-   	}
-   	private function Modify()
-   	{
-   		
-   	}
-   	private function delete()
-   	{
-   		# code...
-   	}
    	private function Id()
    	{
    		# code...
