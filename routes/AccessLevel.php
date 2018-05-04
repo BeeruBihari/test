@@ -28,3 +28,8 @@ Route::get('/SignupPage', function () {
 Route::get('/Success', function () {		//BuyPackage 3
     return view('AccessLevel.Success');
 });
+
+// new user  develope  
+Route::get('AccessLevel/new', function () {
+    return view('AccessLevel.NewAccessType');
+});
