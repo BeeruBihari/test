@@ -7,7 +7,7 @@
 	<div class="container-fluid">
 		<div class="row" >
 			<div class="col-md-4">
-				<img src="fish.jpg" alt="Product name" class="img-fluid">
+				<img src="{{url('/')}}/AccessLevelImg/fish.jpg" alt="Product name" class="img-fluid">
 				<button class="btn btn-lg btn-primary fit">ADD TO CART</button>
 				<button class="btn btn-lg btn-success fit">BUY NOW</button>
 			</div>

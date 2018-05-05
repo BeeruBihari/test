@@ -27,21 +27,21 @@
 	  </ol>
 	  <div class="carousel-inner">
 	    <div class="carousel-item active">
-	        <img class="d-block w-100" src="fish.jpg" alt="First slide">
+	        <img class="d-block w-100" src="{{url('/')}}/AccessLevelImg/fish.jpg" alt="First slide">
 	        <div class="carousel-caption d-none d-md-block">
 		        <h5>Tuna</h5>
 		        <p>This is fish</p>
 		    </div>
 	    </div>
 	    <div class="carousel-item">
-		    <img class="d-block w-100" src="fish.jpg" alt="Second slide">
+		    <img class="d-block w-100" src="{{url('/')}}/AccessLevelImg/fish.jpg" alt="Second slide">
 		    <div class="carousel-caption d-none d-md-block">
 			    <h5>Batli</h5>
 			    <p>This is another fish</p>
 			</div>
 	    </div>
 	    <div class="carousel-item">
-		    <img class="d-block w-100" src="fish.jpg" alt="Third slide">
+		    <img class="d-block w-100" src="{{url('/')}}/AccessLevelImg/fish.jpg" alt="Third slide">
 		    <div class="carousel-caption d-none d-md-block">
 			    <h5>Laundi</h5>
 			    <p>This is fish after fish</p>
@@ -63,7 +63,7 @@
 		
 		<div class="row">
 			<div class="col-md-3">
-				<img src="fish.jpg" alt = "fish" class="img-fluid">
+				<img src="{{url('/')}}/AccessLevelImg/fish.jpg" alt = "fish" class="img-fluid">
 				<div class="card">
 					<div class="card-body">
 					
@@ -88,7 +88,7 @@
 				
 			</div>
 			<div class="col-md-3">
-				<img src="fish.jpg" alt = "fish" class="img-fluid">
+				<img src="{{url('/')}}/AccessLevelImg/fish.jpg" alt = "fish" class="img-fluid">
 				<div class="card">
 					<div class="card-body">
 						<h3>Katiya Fish</h3>
@@ -111,7 +111,7 @@
 				
 			</div>
 			<div class="col-md-3">
-				<img src="fish.jpg" alt = "fish" class="img-fluid">
+				<img src="{{url('/')}}/AccessLevelImg/fish.jpg" alt = "fish" class="img-fluid">
 				<div class="card">
 					<div class="card-body">
 						<h3>Tapli Fish</h3>
@@ -134,7 +134,7 @@
 				
 			</div>
 			<div class="col-md-3">
-				<img src="fish.jpg" alt = "fish" class="img-fluid">
+				<img src="{{url('/')}}/AccessLevelImg/fish.jpg" alt = "fish" class="img-fluid">
 				<div class="card">
 					<div class="card-body">
 						
@@ -161,7 +161,7 @@
 		<br>
 		<div class="row">
 			<div class="col-md-3">
-				<img src="fish.jpg" alt = "fish" class="img-fluid">
+				<img src="{{url('/')}}/AccessLevelImg/fish.jpg" alt = "fish" class="img-fluid">
 				<div class="card">
 					<div class="card-body">
 					
@@ -186,7 +186,7 @@
 				
 			</div>
 			<div class="col-md-3">
-				<img src="fish.jpg" alt = "fish" class="img-fluid">
+				<img src="{{url('/')}}/AccessLevelImg/fish.jpg" alt = "fish" class="img-fluid">
 				<div class="card">
 					<div class="card-body">
 						<h3>Katiya Fish</h3>
@@ -209,7 +209,7 @@
 				
 			</div>
 			<div class="col-md-3">
-				<img src="fish.jpg" alt = "fish" class="img-fluid">
+				<img src="{{url('/')}}/AccessLevelImg/fish.jpg" alt = "fish" class="img-fluid">
 				<div class="card">
 					<div class="card-body">
 						<h3>Tapli Fish</h3>
@@ -232,7 +232,7 @@
 				
 			</div>
 			<div class="col-md-3">
-				<img src="fish.jpg" alt = "fish" class="img-fluid">
+				<img src="{{url('/')}}/AccessLevelImg/fish.jpg" alt = "fish" class="img-fluid">
 				<div class="card">
 					<div class="card-body">
 						
