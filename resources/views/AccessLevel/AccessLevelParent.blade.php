@@ -20,5 +20,11 @@
 	 @yield('Product')
 	 @yield('SignupPage')
 	 @yield('Success')
+	 @yield('content')
+	
+	
+	@yield('script')
+	
+	
 </body>
 </html>

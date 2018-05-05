@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class ParentClintListTable extends Migration
+class UserTypeTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class ParentClintListTable extends Migration
      */
     public function up()
     {
-        Schema::create('parent_clint_list_table', function (Blueprint $table) {
-            $table->increments('parent_clint_id');
-            $table->string('clint_password');
-            $table->string('package_list_json');
+        Schema::create('user_type_table', function (Blueprint $table) {
+            $table->string('user_type');
+            $table->string('name');
+            $table->string('package_access_list');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class ParentClintListTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('parent_clintList_table');
+        Schema::dropIfExists('user_type_table');
     }
 }

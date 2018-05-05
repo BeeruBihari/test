@@ -25,3 +25,9 @@ Route::get('/SignupPage', function () {
     return view('AccessLevel.SignupPage');
 });
 
+
+
+// new user  develope  
+Route::get('AccessLevel/new', function () {
+    return view('AccessLevel.NewAccessType');
+});
