@@ -1,5 +1,5 @@
 @extends('AccessLevel.AccessLevelParent')
-@section('LoginPage')
+@section('content')
  	<br>
  	<br>
 	<div class="container" align="center">

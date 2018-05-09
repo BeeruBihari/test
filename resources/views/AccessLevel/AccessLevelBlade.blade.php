@@ -1,5 +1,5 @@
 @extends('AccessLevel.AccessLevelParent')
-@section('AccessLevelBlade')
+@section('content')
 	<h1 align="center">Access Level Setting</h1>
 	<h4 align="center">You can set anyonces privalage form here by type or particular</h4>
 	<hr>

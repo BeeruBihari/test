@@ -14,13 +14,15 @@ class PackageListTable extends Migration
     public function up()
     {
         Schema::create('package_list_table', function (Blueprint $table) {
-            $table->increments('package_id');
+            $table->increments('package_id'); 
             $table->string('package_name');
             $table->string('management_type');
+            $table->string('key_features');
             $table->string('package_desc');
             $table->integer('package_cost');
             $table->float('rating');
             $table->integer('validity');
+            $table->integer('image_path');
             $table->timestamps();
         });
     }

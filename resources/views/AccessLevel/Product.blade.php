@@ -1,23 +1,6 @@
 @extends('AccessLevel.AccessLevelParent')
-@section('Product')
-	<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-	    <span class="navbar-toggler-icon"></span>
-	  </button>
-	  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-	    <a class="navbar-brand" href="#">BOOK.com</a>
-	    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-	      <li class="nav-item active">
-	        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-	      </li>
-	      
-	    </ul>
-	    <form class="form-inline my-2 my-lg-0">
-	      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-	      <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
-	    </form>
-	  </div>
-	</nav>
+@section('content')
+	
 
 	<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 	  <ol class="carousel-indicators">
@@ -27,21 +10,21 @@
 	  </ol>
 	  <div class="carousel-inner">
 	    <div class="carousel-item active">
-	        <img class="d-block w-100" src="{{url('/')}}/AccessLevelImg/fish.jpg" alt="First slide">
+	        <img class="d-block w-100" src="{{url('/')}}/AccessLevelImg/fishHalf.jpg" alt="First slide">
 	        <div class="carousel-caption d-none d-md-block">
 		        <h5>Tuna</h5>
 		        <p>This is fish</p>
 		    </div>
 	    </div>
 	    <div class="carousel-item">
-		    <img class="d-block w-100" src="{{url('/')}}/AccessLevelImg/fish.jpg" alt="Second slide">
+		    <img class="d-block w-100" src="{{url('/')}}/AccessLevelImg/fishHalf.jpg" alt="Second slide">
 		    <div class="carousel-caption d-none d-md-block">
 			    <h5>Batli</h5>
 			    <p>This is another fish</p>
 			</div>
 	    </div>
 	    <div class="carousel-item">
-		    <img class="d-block w-100" src="{{url('/')}}/AccessLevelImg/fish.jpg" alt="Third slide">
+		    <img class="d-block w-100" src="{{url('/')}}/AccessLevelImg/fishHalf.jpg" alt="Third slide">
 		    <div class="carousel-caption d-none d-md-block">
 			    <h5>Laundi</h5>
 			    <p>This is fish after fish</p>
@@ -62,199 +45,56 @@
 	<div class="container">
 		
 		<div class="row">
-			<div class="col-md-3">
-				<img src="{{url('/')}}/AccessLevelImg/fish.jpg" alt = "fish" class="img-fluid">
+			@foreach($list as $data)
+			<div class="col-sm-3 " >
+				<img src="{{url('/')}}/AccessLevelImg/{{$data->image_path}}" alt = "fish" class="img-fluid product_card" id="product_imag_{{$data->package_id}}">
 				<div class="card">
-					<div class="card-body">
+					<div class="card-body product_card" id="product_card_{{$data->package_id}}">
 					
-						<h3>Tuna Fish</h3>
-						<p>This is tuna Fish. This is testy fish because this is tuna fish i love this fish because this is tuna fish. this very good i like this fish. this is very good because this is yellow.</p>
+						<h3>{{$data->package_name}}</h3>
+						<p>{{$data->package_desc}}</p>
 							
 					</div>
 					<div class="card-footer">
 						<div class="container">
 							<div class = "row">
-								<div class="col-md-6">
-									<h5>RS. 100</h5>
+								<div class="col-sm-6">
+									<h5>{{$data->package_cost}}</h5>
 								</div>
-								<div class="col-md-6">
-									<button class="btn btn-success">Add to cart</button>
+								<div class="col-sm-6">
+									@php 
+										$items = Session::get('cart');
+										$count = 0;
+										if($items != NULL){
+											$count = count($items);
+											if (in_array($data->package_id, $items) != false) {
+								                $class = "btn-danger";
+								                $value = "Remove";
+								            }else{
+									            $class = "btn-success";
+								                $value = "Add to cart";
+									        }
+										}else{
+										echo($count);
+								            $class = "btn-success";
+							                $value = "Add to cart";
+								        }
+										
+									@endphp 
+									<input type="hidden" value="{{$count}}" id = "count_cart_item">
+									<button class="btn {{$class}} add_to_cart" id = "add_to_cart_{{$data->package_id}}">{{$value}}</button>
 								</div>
 							</div>
 						</div>	
 					</div>	
-				</div>
-				
-				
+				</div>	
 			</div>
-			<div class="col-md-3">
-				<img src="{{url('/')}}/AccessLevelImg/fish.jpg" alt = "fish" class="img-fluid">
-				<div class="card">
-					<div class="card-body">
-						<h3>Katiya Fish</h3>
-						<p>This is Katiya Fish. This is testy fish because this is Katiya fish i love this fish because this is Katiya fish. this very good i like this fish. this is very good because this is yellow.</p>
-							
-					</div>
-					<div class="card-footer">
-						<div class="container">
-							<div class = "row">
-								<div class="col-md-6">
-									<h5>RS. 100</h5>
-								</div>
-								<div class="col-md-6">
-									<button class="btn btn-success">Add to cart</button>
-								</div>
-							</div>
-						</div>	
-					</div>
-				</div>
-				
-			</div>
-			<div class="col-md-3">
-				<img src="{{url('/')}}/AccessLevelImg/fish.jpg" alt = "fish" class="img-fluid">
-				<div class="card">
-					<div class="card-body">
-						<h3>Tapli Fish</h3>
-						<p>This is Tapli Fish. This is testy fish because this is Tapli fish i love this fish because this is Tapli fish. this very good i like this fish. this is very good because this is yellow.</p>
-						
-					</div>
-					<div class="card-footer">
-						<div class="container">
-							<div class = "row">
-								<div class="col-md-6">
-									<h5>RS. 100</h5>
-								</div>
-								<div class="col-md-6">
-									<button class="btn btn-success">Add to cart</button>
-								</div>
-							</div>
-						</div>	
-					</div>
-				</div>
-				
-			</div>
-			<div class="col-md-3">
-				<img src="{{url('/')}}/AccessLevelImg/fish.jpg" alt = "fish" class="img-fluid">
-				<div class="card">
-					<div class="card-body">
-						
-						<h3>Batli Fish</h3>
-						<p>This is Batli Fish. This is testy fish because this is Batli fish i love this fish because this is Batli fish. this very good i like this fish. this is very good because this is yellow.</p>
-						
-					</div>
-					<div class="card-footer">
-						<div class="container">
-							<div class = "row">
-								<div class="col-md-6">
-									<h5>RS. 100</h5>
-								</div>
-								<div class="col-md-6">
-									<button class="btn btn-success">Add to cart</button>
-								</div>
-							</div>
-						</div>	
-					</div>
-				</div>
-				
-			</div>
-		</div>
-		<br>
-		<div class="row">
-			<div class="col-md-3">
-				<img src="{{url('/')}}/AccessLevelImg/fish.jpg" alt = "fish" class="img-fluid">
-				<div class="card">
-					<div class="card-body">
-					
-						<h3>Tuna Fish</h3>
-						<p>This is tuna Fish. This is testy fish because this is tuna fish i love this fish because this is tuna fish. this very good i like this fish. this is very good because this is yellow.</p>
-							
-					</div>
-					<div class="card-footer">
-						<div class="container">
-							<div class = "row">
-								<div class="col-md-6">
-									<h5>RS. 100</h5>
-								</div>
-								<div class="col-md-6">
-									<button class="btn btn-success">Add to cart</button>
-								</div>
-							</div>
-						</div>	
-					</div>
-				</div>
-				
-				
-			</div>
-			<div class="col-md-3">
-				<img src="{{url('/')}}/AccessLevelImg/fish.jpg" alt = "fish" class="img-fluid">
-				<div class="card">
-					<div class="card-body">
-						<h3>Katiya Fish</h3>
-						<p>This is Katiya Fish. This is testy fish because this is Katiya fish i love this fish because this is Katiya fish. this very good i like this fish. this is very good because this is yellow.</p>
-							
-					</div>
-					<div class="card-footer">
-						<div class="container">
-							<div class = "row">
-								<div class="col-md-6">
-									<h5>RS. 100</h5>
-								</div>
-								<div class="col-md-6">
-									<button class="btn btn-success">Add to cart</button>
-								</div>
-							</div>
-						</div>	
-					</div>
-				</div>
-				
-			</div>
-			<div class="col-md-3">
-				<img src="{{url('/')}}/AccessLevelImg/fish.jpg" alt = "fish" class="img-fluid">
-				<div class="card">
-					<div class="card-body">
-						<h3>Tapli Fish</h3>
-						<p>This is Tapli Fish. This is testy fish because this is Tapli fish i love this fish because this is Tapli fish. this very good i like this fish. this is very good because this is yellow.</p>
-						
-					</div>
-					<div class="card-footer">
-						<div class="container">
-							<div class = "row">
-								<div class="col-md-6">
-									<h5>RS. 100</h5>
-								</div>
-								<div class="col-md-6">
-									<button class="btn btn-success">Add to cart</button>
-								</div>
-							</div>
-						</div>	
-					</div>
-				</div>
-				
-			</div>
-			<div class="col-md-3">
-				<img src="{{url('/')}}/AccessLevelImg/fish.jpg" alt = "fish" class="img-fluid">
-				<div class="card">
-					<div class="card-body">
-						
-						<h3>Batli Fish</h3>
-						<p>This is Batli Fish. This is testy fish because this is Batli fish i love this fish because this is Batli fish. this very good i like this fish. this is very good because this is yellow.</p>
-						
-					</div>
-					<div class="card-footer">
-						<div class="container">
-							<div class = "row">
-								<div class="col-md-6">
-									<h5>RS. 100</h5>
-								</div>
-								<div class="col-md-6">
-									<button class="btn btn-success">Add to cart</button>
-								</div>
-							</div>
-						</div>	
-					</div>
-				</div>
-				
-			</div>
+			@endforeach
 		</div>
 	</div>
+	<script type="text/javascript" src="{{url('/')}}/js/AccessLevel/BuyPackage.js"></script>
+	<script type="text/javascript">
+		$url = "{{url('/')}}";
+		$button_class = "success";
+	</script>
 @endsection

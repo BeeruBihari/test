@@ -15,8 +15,8 @@ class UserTypeTable extends Migration
     {
         Schema::create('user_type_table', function (Blueprint $table) {
             $table->string('user_type');
-            $table->string('name');
-            $table->string('package_access_list');
+            $table->string('type_name');
+            $table->string('default_package_access_list');
             $table->timestamps();
         });
     }
