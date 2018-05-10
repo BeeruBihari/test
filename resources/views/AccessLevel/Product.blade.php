@@ -75,7 +75,6 @@
 								                $value = "Add to cart";
 									        }
 										}else{
-										echo($count);
 								            $class = "btn-success";
 							                $value = "Add to cart";
 								        }

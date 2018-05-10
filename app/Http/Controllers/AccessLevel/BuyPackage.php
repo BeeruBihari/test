@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 use DB;
 use Session;
 use App\plugin_problem_suggestation_model;
+use App\buy_package_model;
+
 class BuyPackage extends Controller
 {
     //plugin for showing product
@@ -116,7 +118,7 @@ class BuyPackage extends Controller
         $_POST['productinfo'] = "product info";
         $_POST['surl'] = url('/')."/PaymentStatus";
         $_POST['furl'] = url('/')."/PaymentStatus";
-        $_POST['txnid'] = "c_id_12345";
+        $_POST['txnid'] = "1-2-1";
         $_POST['key'] = "QrJSX8h2";
         $_POST['service_provider'] = 'payu_paisa';
 
@@ -211,18 +213,40 @@ class BuyPackage extends Controller
         $status=$_POST["status"];
         //$firstname=$_POST["firstname"];
         $amount=$_POST["amount"];
-        //$txnid=$_POST["txnid"];
+        $txnid=$_POST["txnid"];
         //$posted_hash=$_POST["hash"];
         $productinfo=$_POST["productinfo"];
         ////$mobile=$_POST['mobile'];
         //$email=$_POST["email"];
-        $payuMoneyId=$_POST["payuMoneyId"];
+        // appending timestamp to make unique id
+        $payuMoneyId=$_POST["payuMoneyId"]."_".time();
         $mode=$_POST["mode"];
-        echo $status;
-        echo $amount;
-        echo $productinfo;
-        echo $payuMoneyId;
-        echo $mode;
+        
+        $clint_package_validity = explode('-',$txnid);
+        /* inserting success data in database */
+        $date_y = date("Y")+$clint_package_validity[2];
+        $date_m = date("m");
+        $date_d = date("d");
+        $expiry_date = $date_y."-".$date_m."-".$date_d;
+
+        //time stamp for created at
+        $t=time();
+        $created_at = date("Y-m-d",$t);
+        if($status = "success"){
+            buy_package_model::insert(
+                [   
+                    'my_clint_id' => $clint_package_validity[0], 
+                    'package_id' => $clint_package_validity[1],
+                    'transaction_id' => $payuMoneyId, 
+                    'payment_method' => $mode,
+                    'price'=>$amount,
+                    'running_status'=>"true",
+                    'expiry_date' => $expiry_date,
+                    'created_at' => $created_at,
+                ]
+            );
+        }
+
         return view('AccessLevel.PaymentStatus',['status'=>$status,'amount'=>$amount,'productinfo'=>$productinfo,'payment_id'=>$payuMoneyId,'mode'=>$mode]);
     }
 }

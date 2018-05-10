@@ -22,7 +22,7 @@
 				                $value = "Add to cart";
 					        }
 						}else{
-						echo($count);
+						
 				            $class = "btn-primary";
 			                $value = "Add to cart";
 				        }
