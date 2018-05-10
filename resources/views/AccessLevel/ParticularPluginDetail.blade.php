@@ -29,7 +29,11 @@
 						
 					@endphp 
 					<button class="btn btn-lg {{$class}} fit add_to_cart" id = "add_to_cart_{{$plugin_info->package_id}}">{{$value}}</button>
-					<a href="{{url('/')}}/payment_getway" class="btn btn-lg btn-success fit">BUY NOW</a>
+					<form action="{{url('/')}}/payment_getway" method="POST">
+						 <input type="hidden" name="package_id" value="{{$plugin_info->package_id}}">
+						 <input type="submit" class="btn btn-lg btn-success fit" value="BUY NOW">
+						 {{ csrf_field() }}
+					</form>
 				</div>
 				<div class="col-md-8">
 					<h2>{{$plugin_info->package_name}}</h2>

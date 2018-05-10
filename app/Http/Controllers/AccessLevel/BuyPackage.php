@@ -109,18 +109,27 @@ class BuyPackage extends Controller
     }
 
     //open payment gateway for paying
-    function openPaymentGateway(){
+    function openPaymentGateway(Request $request){
+        //geting package id form post request
+        $package_id = $request->package_id;
 
+        //feteching details about the package from the pacakge id
+        $package_details = DB::table('package_list_table')
+        ->select( 'package_name','package_cost', 'validity')
+        ->where('package_id', '=', $package_id)
+        ->first();
+
+        //initilizing post aaray to sending request to the payment gateway
         $_POST['firstname'] = "Aarav";
-        $_POST['amount'] = 500;
+        $_POST['amount'] = $package_details->package_cost;
         $_POST['email'] = "aaravonly4you@gmail.com";
         $_POST['phone'] = "8340669783";
-        $_POST['productinfo'] = "product info";
+        $_POST['productinfo'] = $package_details->package_name;
         $_POST['surl'] = url('/')."/PaymentStatus";
         $_POST['furl'] = url('/')."/PaymentStatus";
-        $_POST['txnid'] = "1-2-1";
-        $_POST['key'] = "QrJSX8h2";
-        $_POST['service_provider'] = 'payu_paisa';
+        $_POST['txnid'] = "4-".$package_id."-".$package_details->validity;
+        $_POST['key'] = env("MERCHANT_KEY","NOT SET");
+        $_POST['service_provider'] = env("PAYMENT_GATEWAY_PROVIDER","NOT SET");
 
 
         /* making hash */ 
@@ -248,5 +257,8 @@ class BuyPackage extends Controller
         }
 
         return view('AccessLevel.PaymentStatus',['status'=>$status,'amount'=>$amount,'productinfo'=>$productinfo,'payment_id'=>$payuMoneyId,'mode'=>$mode]);
+    }
+    function test(){
+        var_dump($_SERVER);
     }
 }

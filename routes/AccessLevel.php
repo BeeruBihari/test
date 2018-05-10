@@ -41,8 +41,10 @@ Route::get('/searchResult/{searchKey}','AccessLevel\BuyPackage@searchResult');
 Route::get('/particularPluginDetailLike/{plugin}','AccessLevel\BuyPackage@makeParticularPluginDetailLike');
 
 //payment getway buy backage
-Route::get('/payment_getway','AccessLevel\BuyPackage@openPaymentGateway');
+Route::POST('/payment_getway','AccessLevel\BuyPackage@openPaymentGateway');
 
+//testing url 
+Route::get('/test','AccessLevel\BuyPackage@test');
 
 Route::get('/SignupPage', function () {
     return view('AccessLevel.SignupPage');
