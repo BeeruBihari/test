@@ -29,3 +29,10 @@ Route::get('/', function () {
 });
 
 Route::get('/lib','library_management\general_management@show');
+Route::get('profile',function(){
+	return view('MainTheme.profile');
+});
+
+Route::get('Main',function(){
+	return view('MainTheme.Main');
+});

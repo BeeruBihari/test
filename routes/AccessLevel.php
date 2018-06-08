@@ -56,3 +56,7 @@ Route::get('/SignupPage', function () {
 Route::get('AccessLevel/new', function () {
     return view('AccessLevel.NewAccessType');
 });
+
+Route::get('profile',function(){
+	return view('MainTheme.profile');
+});
