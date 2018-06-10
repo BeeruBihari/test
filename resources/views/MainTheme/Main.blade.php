@@ -279,82 +279,82 @@
             setTimeout(function(){$("#openNav").click();console.log("done");},20);
 
 
-          //   //imgur uploading..Start
-          //    $('.imgur').on("change", function() {
-          //       $this = $(this);
-          //     var $files = $(this).get(0).files;
+            // //imgur uploading..Start
+            //  $('.imgur').on("change", function() {
+            //     $this = $(this);
+            //   var $files = $(this).get(0).files;
 
-          //     if ($files.length) {
+            //   if ($files.length) {
 
-          //       // Reject big files
-          //       if ($files[0].size > $(this).data("max-size") * 1024) {
-          //         alert("Please select a smaller file");
-          //         return false;
-          //       }
-          //       console.log($files[0].mozFullPath);
-          //       console.log($files);
-          //       console.log($('.imgur').val());
-          //       // Begin file upload
-          //       console.log("Uploading file to Imgur..");
-          //       var clientId = "48a6587a220b9c8"; // Your client Id
-          //       var imgUrl = "http://i.imgur.com/l5OqYoZ.jpg";
-          //       var base64Data; // for base 64 data 
-          //       // this is to conver to base 64
-          //       var A;
-          //       var B;
+            //     // Reject big files
+            //     if ($files[0].size > $(this).data("max-size") * 1024) {
+            //       alert("Please select a smaller file");
+            //       return false;
+            //     }
+            //     console.log($files[0].mozFullPath);
+            //     console.log($files);
+            //     console.log($('.imgur').val());
+            //     // Begin file upload
+            //     console.log("Uploading file to Imgur..");
+            //     var clientId = "48a6587a220b9c8"; // Your client Id
+            //     var imgUrl = "http://i.imgur.com/l5OqYoZ.jpg";
+            //     var base64Data; // for base 64 data 
+            //     // this is to conver to base 64
+            //     var A;
+            //     var B;
 
-          //       function findBase64(){
-          //         console.log("in base64Data");
-          //         //if ($this.files && $this.files[0]) {
-          //           console.log("if if file");
-          //           var FR= new FileReader();
+            //     function findBase64(){
+            //       console.log("in base64Data");
+            //       //if ($this.files && $this.files[0]) {
+            //         console.log("if if file");
+            //         var FR= new FileReader();
                     
-          //           FR.addEventListener("load", function(e) {
-          //             base64Data = e.target.result;
-          //             //return(base64Data);
-          //             console.log("calculated");
-          //             //console.log(base64Data);
-          //             sendajax()
+            //         FR.addEventListener("load", function(e) {
+            //           base64Data = e.target.result;
+            //           //return(base64Data);
+            //           console.log("calculated");
+            //           //console.log(base64Data);
+            //           sendajax()
                       
-          //           }); 
+            //         }); 
                     
-          //           FR.readAsDataURL( $files[0] );
-          //           B = $files[0];
+            //         FR.readAsDataURL( $files[0] );
+            //         B = $files[0];
 
-          //           var A = new FormData();
-          //           A.append("image", B);
-          //         //}
-          //       }//base 64 cnvertation function
-          //       if(base64Data == null){
-          //         console.log("null");
-          //       }
-          //       function sendajax(){
-          //         console.log(base64Data.data);
-          //         $.ajax({
-          //           url: "https://api.imgur.com/3/upload",
-          //           type: "POST",
-          //           processData: false,
-          //           data: {image: base64Data.data},
-          //           error: function(response){
-          //             console.log("Error In Uploading:");
-          //             console.log(response);
+            //         var A = new FormData();
+            //         A.append("image", B);
+            //       //}
+            //     }//base 64 cnvertation function
+            //     if(base64Data == null){
+            //       console.log("null");
+            //     }
+            //     function sendajax(){
+            //       console.log(base64Data.data);
+            //       $.ajax({
+            //         url: "https://api.imgur.com/3/upload",
+            //         type: "POST",
+            //         processData: false,
+            //         data: {image: base64Data.data},
+            //         error: function(response){
+            //           console.log("Error In Uploading:");
+            //           console.log(response);
 
-          //           },
-          //           beforeSend: function (xhr) {
-          //             xhr.setRequestHeader("Authorization", "Client-ID " + clientId);
-          //           },
-          //           success: function(response) {
-          //             // Image URL available at response.data.link
-          //             console.log(response.data.link);
-          //           }
-          //         });//ajax end  
-          //       }
-          //       findBase64();
-          //       //findBase64().done(sendajax());// calling both function one after other
+            //         },
+            //         beforeSend: function (xhr) {
+            //           xhr.setRequestHeader("Authorization", "Client-ID " + clientId);
+            //         },
+            //         success: function(response) {
+            //           // Image URL available at response.data.link
+            //           console.log(response.data.link);
+            //         }
+            //       });//ajax end  
+            //     }
+            //     findBase64();
+            //     //findBase64().done(sendajax());// calling both function one after other
 
-          //     }//when file has grater than 0 kb length
-          //   });
-          // });//imgur uploading..Start
+            //   }//when file has grater than 0 kb length
+            // });//imgur uploading..Start
+          });
 
 
 
