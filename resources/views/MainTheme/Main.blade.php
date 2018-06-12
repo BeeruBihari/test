@@ -26,6 +26,7 @@
             color: white;
           }
           body{
+            background-attachment: fixed;
             background-image: url("img/1.jpg");
           }
           
@@ -51,8 +52,8 @@
           .sidenav a {
               padding: 8px 8px 8px 32px;
               text-decoration: none;
-              font-size: 25px;
-              color: #818181;
+              font-size: 1rem;
+              color: #ffffff;
               display: block;
               transition: 0.3s;
           }
@@ -61,13 +62,7 @@
               color: #f1f1f1;
           }
 
-          .sidenav .closebtn {
-              position: absolute;
-              top: 0;
-              right: 25px;
-              font-size: 36px;
-              margin-left: 50px;
-          }
+          
 
           #main {
               transition: margin-left .5s;
@@ -100,10 +95,13 @@
               padding: 6px 8px 6px 16px;
               text-decoration: none;
               font-size: 20px;
-              color: #818181;
+              
               display: block;
               border: none;
-              background: none;
+
+              color: white;
+              background-color: rgba(0,0,0,.2);
+              
               width: 100%;
               text-align: left;
               cursor: pointer;
@@ -112,26 +110,21 @@
 
           /* On mouse-over */
           .sidenav a:hover, .dropdown-btn:hover {
-              color: #f1f1f1;
-          }
-
-          /* Main content */
-          .main {
-              margin-left: 200px; /* Same as the width of the sidenav */
-              font-size: 20px; /* Increased text to enable scrolling */
-              padding: 0px 10px;
+              color: white;
+              background-color: rgba(0,0,0,.8);
           }
 
           /* Add an active class to the active dropdown button */
           .active {
-              background-color: green;
               color: white;
+              background-color: rgba(0,0,0,.8);
           }
 
           /* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
           .dropdown-container {
               display: none;
-              background-color: #262626;
+              color: white;
+              background-color: rgba(0,0,0,.4);
               padding-left: 8px;
           }
 
@@ -141,8 +134,32 @@
               padding-right: 8px;
           }
 
+          /* Scroll bar animation start*/
 
+            
+            .scrollbar-pink::-webkit-scrollbar-track {
+              -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+              background-color: #F5F5F5;
+              border-radius: 10px; 
+            }
 
+            .scrollbar-pink::-webkit-scrollbar {
+              width: 12px;
+              background-color: #F5F5F5; 
+            }
+
+            .scrollbar-pink::-webkit-scrollbar-thumb {
+              border-radius: 10px;
+              -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+              background-color: #a6767a; 
+            }
+
+          /* scroll bar animatin end*/
+            /*scroll bar for main content*/
+            /*.content-box{
+                height: 300px;
+                overflow: scroll;
+            }*/
           /*Trans*/
           .trans2{
             color: white;
@@ -167,10 +184,10 @@
         </style>
     </head>
     <body>
-        <div class="continer-fluid" id="main">
-          <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="continer-fluid">
+          <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
             <div class="col-sm-1">
-              <span style="font-size:30px;cursor:pointer" id = "openNav"><i class="fas fa-arrow-circle-right"></i></span>  
+              <span style="cursor:pointer" id = "openCloseNav" opcode= "openNav"><i class="fas fa-arrow-circle-right fa-2x" id = "navArrow"></i></span>  
             </div>
             <a class="navbar-brand" href="#">Navbar</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -205,78 +222,201 @@
               </div>
             </div>
           </nav>
+          <div id="mySidenav" class="sidenav trans2 scrollbar-pink">
+              <a href="#">About</a>
+              <a href="#">Services</a>
+              <a href="#">Clients</a>
+              <a href="#">Contact</a>
+              <a href="#">About</a>
+              <a href="#">Services</a>
+              <a href="#">Clients</a>
+              <a href="#">Contact</a>
+              <a href="#">About</a>
+              <a href="#">Services</a>
+              <a href="#">Clients</a>
+              <a href="#">Contact</a>
 
-
-          <div id="mySidenav" class="sidenav trans6">
-            <a href="javascript:void(0)" class="closebtn" id="closeNav">&times;</a>
-            <a href="#">About</a>
-            <a href="#">Services</a>
-            <a href="#">Clients</a>
-            <a href="#">Contact</a>
-
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#clients">Clients</a>
-            <a href="#contact">Contact</a>
-            <a class="dropdown-btn">Dropdown 
-              <i class="fa fa-caret-down"></i>
-            </a>
-            <div class="dropdown-container">
-              <a href="#">Link 1</a>
-              <a href="#">Link 2</a>
-              <a href="#">Link 3</a>
-            </div>
-            <a href="#contact">Search</a>   
-          </div>
-
-
-          <br>
-          <br>
-          <br>
-
-          <!-- ---------------------- Content Area:start ---------------- -->
-          <div class="continer-fluid trans2">
-            <br>
-            <div class="row">
-              <div class="offset-1 col-sm-4 trans4">
-                Cow is a very famous and important domestic animal. It is known as the “Cow is our Mother” in India. Kids are generally assigned to write essay on cow in their classroom or exams. So, various types of cow essay are provided here in different words limit for your school going kids and children. You can select anyone of these:
-                <div class="trans6">
-                  No of Cow:<b><big><div class="trans8">@2000 </div></big></b>
-                </div>
+              <a href="#about">About</a>
+              <a href="#services">Services</a>
+              <a href="#clients">Clients</a>
+              <a href="#contact">Contact</a>
+              <a class="dropdown-btn">Dropdown 
+                <i class="fa fa-caret-down"></i>
+              </a>
+              <div class="dropdown-container">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
               </div>
-              <div class="offset-sm-2 col-sm-4 trans4">
-                Cow is a very famous and important domestic animal. It is known as the “Cow is our Mother” in India. Kids are generally assigned to write essay on cow in their classroom or exams. So, various types of cow essay are provided here in different words limit for your school going kids and children. You can select anyone of these:
-                <div class="trans6">
-                  No of Cow:<b><big><div class="trans8">@2000 </div></big></b>
+              <a href="#contact">Search</a>   
+            
+          </div>
+          <div id="main" class="">
+            <br>
+            <br>
+            <br>
+
+            <!-- ---------------------- Content Area:start ---------------- -->
+            <div class="continer-fluid trans2 scrollbar-pink">
+              <br>
+              <div class="row">
+                <div class="offset-1 col-sm-4 trans4">
+                  Cow is a very famous and important domestic animal. It is known as the “Cow is our Mother” in India. Kids are generally assigned to write essay on cow in their classroom or exams. So, various types of cow essay are provided here in different words limit for your school going kids and children. You can select anyone of these:
+                  <div class="trans6">
+                    No of Cow:<b><big><div class="trans8">@2000 </div></big></b>
+                  </div>
                 </div>
-              </div>  
-            </div>
-            <!-- <form id="imgur">
-              <input type="file" class="imgur" id = "inp" accept="image/*" data-max-size="5000"/>
-            </form> -->
-          <!-- ---------------------- Content Area:start ---------------- -->            
-          </div>  
+                <div class="offset-sm-2 col-sm-4 trans4">
+                  Cow is a very famous and important domestic animal. It is known as the “Cow is our Mother” in India. Kids are generally assigned to write essay on cow in their classroom or exams. So, various types of cow essay are provided here in different words limit for your school going kids and children. You can select anyone of these:
+                  <div class="trans6">
+                    No of Cow:<b><big><div class="trans8">@2000 </div></big></b>
+                  </div>
+                </div>  
+              </div>
+              <br>
+              <div class="row">
+                <div class="offset-1 col-sm-4 trans4">
+                  Cow is a very famous and important domestic animal. It is known as the “Cow is our Mother” in India. Kids are generally assigned to write essay on cow in their classroom or exams. So, various types of cow essay are provided here in different words limit for your school going kids and children. You can select anyone of these:
+                  <div class="trans6">
+                    No of Cow:<b><big><div class="trans8">@2000 </div></big></b>
+                  </div>
+                </div>
+                <div class="offset-sm-2 col-sm-4 trans4">
+                  Cow is a very famous and important domestic animal. It is known as the “Cow is our Mother” in India. Kids are generally assigned to write essay on cow in their classroom or exams. So, various types of cow essay are provided here in different words limit for your school going kids and children. You can select anyone of these:
+                  <div class="trans6">
+                    No of Cow:<b><big><div class="trans8">@2000 </div></big></b>
+                  </div>
+                </div>  
+              </div>
+              <br>
+              <div class="row">
+                <div class="offset-1 col-sm-4 trans4">
+                  Cow is a very famous and important domestic animal. It is known as the “Cow is our Mother” in India. Kids are generally assigned to write essay on cow in their classroom or exams. So, various types of cow essay are provided here in different words limit for your school going kids and children. You can select anyone of these:
+                  <div class="trans6">
+                    No of Cow:<b><big><div class="trans8">@2000 </div></big></b>
+                  </div>
+                </div>
+                <div class="offset-sm-2 col-sm-4 trans4">
+                  Cow is a very famous and important domestic animal. It is known as the “Cow is our Mother” in India. Kids are generally assigned to write essay on cow in their classroom or exams. So, various types of cow essay are provided here in different words limit for your school going kids and children. You can select anyone of these:
+                  <div class="trans6">
+                    No of Cow:<b><big><div class="trans8">@2000 </div></big></b>
+                  </div>
+                </div>  
+              </div>
+              <br>
+              <div class="row">
+                <div class="offset-1 col-sm-4 trans4">
+                  Cow is a very famous and important domestic animal. It is known as the “Cow is our Mother” in India. Kids are generally assigned to write essay on cow in their classroom or exams. So, various types of cow essay are provided here in different words limit for your school going kids and children. You can select anyone of these:
+                  <div class="trans6">
+                    No of Cow:<b><big><div class="trans8">@2000 </div></big></b>
+                  </div>
+                </div>
+                <div class="offset-sm-2 col-sm-4 trans4">
+                  Cow is a very famous and important domestic animal. It is known as the “Cow is our Mother” in India. Kids are generally assigned to write essay on cow in their classroom or exams. So, various types of cow essay are provided here in different words limit for your school going kids and children. You can select anyone of these:
+                  <div class="trans6">
+                    No of Cow:<b><big><div class="trans8">@2000 </div></big></b>
+                  </div>
+                </div>  
+              </div>
+              <br>
+              <div class="row">
+                <div class="offset-1 col-sm-4 trans4">
+                  Cow is a very famous and important domestic animal. It is known as the “Cow is our Mother” in India. Kids are generally assigned to write essay on cow in their classroom or exams. So, various types of cow essay are provided here in different words limit for your school going kids and children. You can select anyone of these:
+                  <div class="trans6">
+                    No of Cow:<b><big><div class="trans8">@2000 </div></big></b>
+                  </div>
+                </div>
+                <div class="offset-sm-2 col-sm-4 trans4">
+                  Cow is a very famous and important domestic animal. It is known as the “Cow is our Mother” in India. Kids are generally assigned to write essay on cow in their classroom or exams. So, various types of cow essay are provided here in different words limit for your school going kids and children. You can select anyone of these:
+                  <div class="trans6">
+                    No of Cow:<b><big><div class="trans8">@2000 </div></big></b>
+                  </div>
+                </div>  
+              </div>
+              <br>
+              <div class="row">
+                <div class="offset-1 col-sm-4 trans4">
+                  Cow is a very famous and important domestic animal. It is known as the “Cow is our Mother” in India. Kids are generally assigned to write essay on cow in their classroom or exams. So, various types of cow essay are provided here in different words limit for your school going kids and children. You can select anyone of these:
+                  <div class="trans6">
+                    No of Cow:<b><big><div class="trans8">@2000 </div></big></b>
+                  </div>
+                </div>
+                <div class="offset-sm-2 col-sm-4 trans4">
+                  Cow is a very famous and important domestic animal. It is known as the “Cow is our Mother” in India. Kids are generally assigned to write essay on cow in their classroom or exams. So, various types of cow essay are provided here in different words limit for your school going kids and children. You can select anyone of these:
+                  <div class="trans6">
+                    No of Cow:<b><big><div class="trans8">@2000 </div></big></b>
+                  </div>
+                </div>  
+              </div>
+              <br>
+              <div class="row">
+                <div class="offset-1 col-sm-4 trans4">
+                  Cow is a very famous and important domestic animal. It is known as the “Cow is our Mother” in India. Kids are generally assigned to write essay on cow in their classroom or exams. So, various types of cow essay are provided here in different words limit for your school going kids and children. You can select anyone of these:
+                  <div class="trans6">
+                    No of Cow:<b><big><div class="trans8">@2000 </div></big></b>
+                  </div>
+                </div>
+                <div class="offset-sm-2 col-sm-4 trans4">
+                  Cow is a very famous and important domestic animal. It is known as the “Cow is our Mother” in India. Kids are generally assigned to write essay on cow in their classroom or exams. So, various types of cow essay are provided here in different words limit for your school going kids and children. You can select anyone of these:
+                  <div class="trans6">
+                    No of Cow:<b><big><div class="trans8">@2000 </div></big></b>
+                  </div>
+                </div>  
+              </div>
+              <br>
+              <div class="row">
+                <div class="offset-1 col-sm-4 trans4">
+                  Cow is a very famous and important domestic animal. It is known as the “Cow is our Mother” in India. Kids are generally assigned to write essay on cow in their classroom or exams. So, various types of cow essay are provided here in different words limit for your school going kids and children. You can select anyone of these:
+                  <div class="trans6">
+                    No of Cow:<b><big><div class="trans8">@2000 </div></big></b>
+                  </div>
+                </div>
+                <div class="offset-sm-2 col-sm-4 trans4">
+                  Cow is a very famous and important domestic animal. It is known as the “Cow is our Mother” in India. Kids are generally assigned to write essay on cow in their classroom or exams. So, various types of cow essay are provided here in different words limit for your school going kids and children. You can select anyone of these:
+                  <div class="trans6">
+                    No of Cow:<b><big><div class="trans8">@2000 </div></big></b>
+                  </div>
+                </div>  
+              </div>
+              <!-- <form id="imgur">
+                <input type="file" class="imgur" id = "inp" accept="image/*" data-max-size="5000"/>
+              </form> -->
+              <!-- ---------------------- Content Area:start ---------------- -->            
+            </div> 
+
+          </div>
+ 
+              
+                
+
+           
         </div>
         <script>
           
           $(function(){
             console.log("hellow");
-            $("#openNav").click(function(){
-              document.getElementById("mySidenav").style.width = "250px";
-                document.getElementById("main").style.marginLeft = "250px";
-                $(".fa-arrow-circle-right").hide();
-            });
-            $("#closeNav").click(function(){
-              console.log("hello:");
-              document.getElementById("mySidenav").style.width = "0";
+            $("#openCloseNav").click(function(){
+              if($(this).attr("opcode") == "openNav"){
+                document.getElementById("mySidenav").style.width = "200px";
+                document.getElementById("main").style.marginLeft = "200px";
+                $(this).attr("opcode","closeNav");
+                //changin aarow
+                $("#navArrow").removeClass("fa-arrow-circle-right");
+                $("#navArrow").addClass("fa-arrow-circle-left");
+              }else{
+                document.getElementById("mySidenav").style.width = "0";
                 document.getElementById("main").style.marginLeft= "0";
-                $(".fa-arrow-circle-right").show();
+                $(this).attr("opcode","openNav");
+                //changing aarrow
+                $("#navArrow").removeClass("fa-arrow-circle-left");
+                $("#navArrow").addClass("fa-arrow-circle-right");
+              }
             });
             $(".openLink").click(function(){
               window.open($(this).attr("link"));
             });
 
-            setTimeout(function(){$("#openNav").click();console.log("done");},20);
+            setTimeout(function(){$("#openCloseNav").click();console.log("done");},20);
 
 
             // //imgur uploading..Start
